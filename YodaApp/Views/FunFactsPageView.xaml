@@ -39,7 +39,6 @@
             </Frame>
 
 
-            <!-- Button -->
             <Button
         BackgroundColor="ForestGreen"
         Text="Fun Fact"
