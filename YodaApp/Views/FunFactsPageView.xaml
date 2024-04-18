@@ -26,6 +26,9 @@
             HeightRequest="400"
             WidthRequest="400"/>
 
+            <Label Text="Click to Have Fun"
+                FontSize="17"/>
+
             <Frame Margin="20"
          Padding="10"
          CornerRadius="20"
