@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using YodaApp.Configuration;
+using YodaApp.Services;
 using YodaApp.ViewModels;
 using YodaApp.Views;
 
@@ -17,7 +19,8 @@ namespace YodaApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.RegisterViewModels()
+            builder .RegisterServices()
+                   .RegisterViewModels()
                    .RegisterViews();
 
 #if DEBUG
@@ -25,6 +28,16 @@ namespace YodaApp
 #endif
 
             return builder.Build();
+        }
+
+        public static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
+        {
+            // AI Assistant??
+
+            mauiAppBuilder.Services.AddTransient<IYodaResponse, YodaResponse>();
+
+            mauiAppBuilder.Services.AddTransient<ISettings, ConstantSettings>();
+            return mauiAppBuilder;
         }
 
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)

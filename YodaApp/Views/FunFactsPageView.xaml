@@ -2,11 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YodaApp.Views.FunFactsPageView"
+             xmlns:model="clr-namespace:YodaApp.Model"
+             xmlns:viewmodels="clr-namespace:YodaApp.ViewModels"
              Shell.NavBarIsVisible="False"
              >
-    <VerticalStackLayout>
-        <!-- Title -->
-        <Label 
+    <ScrollView>
+        <VerticalStackLayout>
+            <!-- Title -->
+            <Label 
         Text="Fun Facts With Yoda"
         VerticalOptions="Center" 
         HorizontalOptions="Center"
@@ -14,35 +17,37 @@
         Margin="20"
         FontAttributes="Bold"/>
 
-       
-        <!-- Rounded Frame with Yoda Image -->
-        
+
+            <!-- Rounded Frame with Yoda Image -->
+
             <Image Margin="0,30,0,0"
             Source="babyyoda.jpg"
             Aspect="AspectFit"
             HeightRequest="400"
             WidthRequest="400"/>
-        
-        <Frame Margin="20"
+
+            <Frame Margin="20"
          Padding="10"
          CornerRadius="20"
          BackgroundColor="LightGray"
          VerticalOptions="CenterAndExpand"
          HorizontalOptions="CenterAndExpand" >
-            <Label Text="Did you know, hmm? In the Force, great power lies, but in a single smile, endless galaxies can be brightened, yes. Share a smile today, and may the Force be with you, always."
+                <Label Text="{Binding Response.Content}"
                    FontSize="17"/>
-        </Frame>
+            </Frame>
 
 
-        <!-- Button -->
-        <Button
+            <!-- Button -->
+            <Button
         BackgroundColor="ForestGreen"
         Text="Fun Fact"
         TextColor="White"
         VerticalOptions="Center"
         HorizontalOptions="Center"
-        Margin="20"/>
+        Margin="20"
+        Command="{Binding GetResponsesCommand}"/>
 
-        
-    </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
