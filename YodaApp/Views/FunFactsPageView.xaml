@@ -7,27 +7,26 @@
              Shell.NavBarIsVisible="False"
              >
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout Padding="5">
             <!-- Title -->
             <Label 
-        Text="Fun Facts With Yoda"
+        Text=" Fun Facts With Yoda "
         VerticalOptions="Center" 
         HorizontalOptions="Center"
         FontSize="30"
-        Margin="20"
+        
         FontAttributes="Bold"/>
 
 
             <!-- Rounded Frame with Yoda Image -->
 
-            <Image Margin="0,30,0,0"
+            <Image 
             Source="babyyoda.jpg"
             Aspect="AspectFit"
             HeightRequest="400"
             WidthRequest="400"/>
 
-            <Label Text="Click to Have Fun"
-                FontSize="17"/>
+            
 
             <Frame Margin="20"
          Padding="10"
